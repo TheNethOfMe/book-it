@@ -12,6 +12,9 @@
 <body>
   <h1>Welcome To Book-It</h1>
   <h2>There are <%= data.length %> books in the collection.</h2>
+  <% if (!data.length) { %>
+    <%- '<p>There are no books to display</p>' %>
+  <% } %>
   <% data.forEach( book => { %> 
     <div>
       <h3><%= book.title %></h3>

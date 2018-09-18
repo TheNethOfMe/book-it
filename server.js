@@ -22,15 +22,23 @@ app.set('view engine', 'ejs');
 
 app.get('/hello', (req, res) => {
   res.send('hello');
-})
+});
 
 app.get('/books', (req, res) => {
   client.query('SELECT title, author, image_url FROM books;')
-    .then( (result) => {
+    .then((result) => {
       res.render('index', {
         data: result.rows
       });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.redirect('/error');
     });
+});
+
+app.get('/error', (req, res) => {
+  res.render('error');
 });
 
 app.listen(PORT, () => {
