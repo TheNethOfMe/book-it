@@ -16,10 +16,14 @@
     <%- '<p>There are no books to display</p>' %>
   <% } %>
   <% data.forEach( book => { %> 
-    <div>
-      <h3><%= book.title %></h3>
-      <p> <%= book.author %> </p>
-      <img src="<%=book.image_url%>"/>
+    <div class="book-data">
+      <div class="image-side">
+        <img src="<%=book.image_url%>"/>
+      </div>
+      <div class="data-side">
+        <h3><%= book.title %></h3>
+        <p> <%= book.author %> </p>
+      </div>
     </div>
   <% }); %>
   
