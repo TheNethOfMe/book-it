@@ -20,8 +20,12 @@ app.use(express.static('./public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  client.query('SELECT * FROM books;')
+app.get('/hello', (req, res) => {
+  res.send('hello');
+})
+
+app.get('/books', (req, res) => {
+  client.query('SELECT title, author, image_url FROM books;')
     .then( (result) => {
       res.render('index', {
         data: result.rows
