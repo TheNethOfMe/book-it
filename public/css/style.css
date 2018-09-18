@@ -1,4 +1,16 @@
 body {
   background-color: black;
   color: red;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.book-data {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+.data-side {
+  margin: 15px;
 }
