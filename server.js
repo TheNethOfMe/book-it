@@ -2,7 +2,6 @@
 
 const express = require('express');
 const pg = require('pg');
-const ejs = require('ejs');
 require('dotenv').config();
 
 const PORT = process.env.PORT;
@@ -21,7 +20,7 @@ app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 
 app.get('/hello', (req, res) => {
-  res.send('hello');
+  res.render('index', { data: [] });
 });
 
 app.get('/books', (req, res) => {
@@ -39,6 +38,10 @@ app.get('/books', (req, res) => {
 
 app.get('/error', (req, res) => {
   res.render('error');
+});
+
+app.get('*', (req, res) => {
+  res.redirect('/error');
 });
 
 app.listen(PORT, () => {
