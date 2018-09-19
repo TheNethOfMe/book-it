@@ -9,7 +9,10 @@
     <%- '<p>There are no books to display</p>' %>
   <% } %>
   <% data.forEach( book => { %> 
+    <div class="book-header">
     <%- include('partials/book-header', { book: book }); %>
+      <div class="book-button"><a href="/books/<%= book.id %>">View Details</a></div>
+    </div>
   <% }); %>
 </body>
 </html>
