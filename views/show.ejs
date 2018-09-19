@@ -2,6 +2,7 @@
 <html lang="en">
 <%- include('partials/head') %>
 <body>
+  <%- include('partials/nav'); %>
   <%- include('partials/book-header', { book: book }); %>
   <div class="book-data">
     <p><%= book.isbn %></p>

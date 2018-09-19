@@ -2,6 +2,7 @@
 <html>
 <%- include('partials/head'); %>
 <body>
+  <%- include('partials/nav'); %>
   <h1>Welcome To Book-It</h1>
   <h2>There are <%= data.length %> books in the collection.</h2>
   <% if (!data.length) { %>
