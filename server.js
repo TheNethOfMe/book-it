@@ -24,7 +24,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/books', (req, res) => {
-  client.query('SELECT title, author, image_url FROM books;')
+  client.query('SELECT id, title, author, image_url FROM books;')
     .then((result) => {
       res.render('index', {
         data: result.rows
