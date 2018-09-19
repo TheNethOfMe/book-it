@@ -36,6 +36,21 @@ app.get('/books', (req, res) => {
     });
 });
 
+app.get('/books/:id', (req, res) => {
+  let SQL = 'SELECT * FROM books WHERE id=$1';
+  let values = [ req.params.id ];
+  client.query(SQL, values, (err, result) => {
+    if (err) {
+      console.error(err);
+      res.redirect('/error');
+    } else {
+      res.render('show', {
+        book: result.rows[0]
+      });
+    }
+  });
+});
+
 app.get('/error', (req, res) => {
   res.render('error');
 });
