@@ -1,9 +1,10 @@
 body {
   background-color: black;
-  color: red;
   width: 100vw;
   margin: 0 auto;
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: whitesmoke;
 }
 
 .book-header {
@@ -11,6 +12,27 @@ body {
   background-color: white;
   padding: 25px;
   width: 70vw;
+  color: #333333;
+}
+
+.book-header h3 {
+  color: #333333;
+  font-size: 1.5em;
+  margin: 6px;
+}
+
+.book-header h4 {
+  color: #e67429;
+  font-size: .8em;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.book-header h6 {
+  color: #333333;
+  font-weight: bold;
+  font-style: italic;
+  margin: 6px;
 }
 
 .data-side {
@@ -35,4 +57,9 @@ body {
 .book-button a {
   text-decoration: none;
   color: white;
+}
+
+.book-description {
+  background-color: rgb(226, 222, 222);
+  padding: 20px;
 }
