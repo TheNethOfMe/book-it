@@ -2,7 +2,7 @@
 
 ## Neth Horn and Richard Jimenez
 
-## Version 1.1.2
+## Version 1.2.3
 
 This is an app that displays book data. It is a tribute to the Book-It program of our youths. We may not be able to give you a free personal pan pizza, but we can deliver hot and fresh book data.
 
@@ -15,6 +15,8 @@ This is an application made with nodejs, Expressjs, the EJS templating engine, w
 ## Change Log
 09-18-2018 10am = basic scaffolding, created and populated database
 09-18-2018 12pm = first version of app is running
+09-19-2018 10am = individual book details can be viewed
+09-19-2018 11am = styled home and book pages, added nav
 
 ## Credits
 We would like to thank the good folks at Heroku who let people like us run apps for free.
