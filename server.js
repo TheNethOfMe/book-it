@@ -19,6 +19,8 @@ app.get('/hello', (req, res) => {
 
 app.get('/books', ctrl.booksGetAll);
 app.get('/books/:id', ctrl.booksGetOne);
+app.get('/addbook', ctrl.addOneBook);
+
 
 app.get('/error', (req, res) => {
   res.render('pages/error');

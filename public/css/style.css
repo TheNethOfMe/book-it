@@ -63,3 +63,26 @@ body {
   background-color: rgb(226, 222, 222);
   padding: 20px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  margin: 0 auto;
+  background-color: #e67429;
+  padding: 30px;
+  color: black;
+}
+
+label {
+  padding: 6px;
+}
+
+input {
+  margin-left: 17px;
+}
+
+input[type="submit"] {
+  max-width: 200px;
+  margin: 20px auto;
+}

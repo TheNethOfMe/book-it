@@ -34,7 +34,12 @@ function booksGetOne(req, res) {
   });
 }
 
+function addOneBook(req, res) {
+  res.render('pages/new');
+}
+
 module.exports = {
   booksGetAll,
-  booksGetOne
+  booksGetOne,
+  addOneBook
 };
