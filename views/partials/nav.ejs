@@ -2,15 +2,16 @@
   <div class="nav-item brand">
     <a href="/books"><img src="/img/book-it-button2.png" /></a>
   </div>
-  <div class="nav-item hamburger">
+  <div class="hamburger-menu nav-item">
     <img src="/img/hamburger2.png" />
+    <input type="checkbox" />
+    <div class="hamburger-menu-toggle">
+      <div class="drop-down-nav">
+        <%- include('./links') %>
+      </div>
+    </div>
   </div>
   <div class="full-nav">
-    <%- include('./links') %>
-  </div>
-</div>
-<div class="drop-toggle">
-  <div class="drop-down-nav">
     <%- include('./links') %>
   </div>
 </div>
