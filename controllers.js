@@ -27,7 +27,6 @@ function booksGetOne(req, res) {
       console.error(err);
       res.redirect('/error');
     } else {
-      console.log(req.query);
       res.render('pages/show', {
         book: result.rows[0],
         newBook: !!req.query.newBook
