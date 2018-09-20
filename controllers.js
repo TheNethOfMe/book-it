@@ -34,12 +34,25 @@ function booksGetOne(req, res) {
   });
 }
 
-function addOneBook(req, res) {
+function getBookForm(req, res) {
   res.render('pages/new');
+}
+
+function addOneBook(req, res) {
+  let SQL = 'INSERT INTO books (title, author, isbn, image_url, description) VALUES ($1, $2, $3, $4, $5) RETURNING id;';
+  let values = [req.body.title, req.body.author, req.body.isbn, req.body.image_url, req.body.description];
+  client.query(SQL, values, (err, result) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res.redirect(`/books/${result.rows[0].id}`);
+    }
+  });
 }
 
 module.exports = {
   booksGetAll,
   booksGetOne,
-  addOneBook
+  addOneBook,
+  getBookForm
 };

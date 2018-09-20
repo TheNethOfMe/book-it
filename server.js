@@ -19,7 +19,8 @@ app.get('/hello', (req, res) => {
 
 app.get('/books', ctrl.booksGetAll);
 app.get('/books/:id', ctrl.booksGetOne);
-app.get('/addbook', ctrl.addOneBook);
+app.get('/addbook', ctrl.getBookForm);
+app.post('/books', ctrl.addOneBook);
 
 
 app.get('/error', (req, res) => {
@@ -33,4 +34,3 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`We are listening on port ${PORT}.`);
 });
-
