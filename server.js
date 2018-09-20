@@ -21,7 +21,7 @@ app.get('/books', ctrl.booksGetAll);
 app.get('/books/:id', ctrl.booksGetOne);
 
 app.get('/error', (req, res) => {
-  res.render('error');
+  res.render('pages/error');
 });
 
 app.get('*', (req, res) => {
