@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
   background-color: rgb(17, 17, 17);
   width: 100vw;
@@ -7,6 +8,7 @@ body {
   color: whitesmoke;
 }
 
+/* BOOK INDEX */
 .book-header {
   margin: 15px auto;
   background-color: white;
@@ -35,14 +37,6 @@ body {
   margin: 6px;
 }
 
-.data-side {
-  margin: 15px;
-}
-
-.nav-container {
-  display: flex;
-}
-
 .book-button {
   background-color: rgb(17, 17, 17);
   width: 100px;
@@ -64,6 +58,25 @@ body {
   padding: 20px;
 }
 
+/* NAV */
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 5px;
+  width: 100%;
+}
+
+.nav-item {
+  width: 25%;
+  max-width: 95px;
+}
+
+.nav-item img {
+  width: 100%;
+}
+
+/* FORM */
 form {
   display: flex;
   flex-direction: column;
