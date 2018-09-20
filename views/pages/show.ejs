@@ -4,9 +4,13 @@
 <body>
   <%- include('../partials/nav'); %>
   <div class="book-header">
+    <% if (newBook) { %>
+      <div class="new-alert">Your Book Has Been Added</div>
+    <% } %>
     <%- include('../partials/book-header', { book: book }); %>
     <p class="book-description"><%= book.description %></p>
     <h6><%= book.isbn %></h6>
   </div>
+  <%- include('../partials/footer') %>
 </body>
 </html>

@@ -27,8 +27,10 @@ function booksGetOne(req, res) {
       console.error(err);
       res.redirect('/error');
     } else {
+      console.log(req.query);
       res.render('pages/show', {
-        book: result.rows[0]
+        book: result.rows[0],
+        newBook: !!req.query.newBook
       });
     }
   });
@@ -45,7 +47,7 @@ function addOneBook(req, res) {
     if (err) {
       console.error(err);
     } else {
-      res.redirect(`/books/${result.rows[0].id}`);
+      res.redirect(`/books/${result.rows[0].id}?newBook=true`);
     }
   });
 }

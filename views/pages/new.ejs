@@ -4,14 +4,18 @@
 <body>
   <%- include('../partials/nav'); %>
   <form method="POST" action="/books">
-    <label for="title">Title:<input type="text" name="title" /></label>
-    <label for="author">Author:<input type="text" name="author" /></label>
-    <label for="isbn">ISBN 13:<input type="number" name="isbn" /></label>
-    <label for="image_url">Image URL:<input type="text" name="image_url" /></label>
-    <label for="description">Description</label><textarea name="description">
-    </textarea>
-    <input type="submit" value="Add Book" />
+    <%- include('../partials/form-group', { label: 'title'}) %>
+    <%- include('../partials/form-group', { label: 'author'}) %>
+    <%- include('../partials/form-group', { label: 'isbn'}) %>
+    <%- include('../partials/form-group', { label: 'image_url'}) %>
+    <div class="form-group">
+      <label for="description">description:</label>
+      <textarea type="text" id="description" name="description"></textarea>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Add Book" />
+    </div>
   </form>
-
+  <%- include('../partials/footer'); %>
 </body>
 </html>
