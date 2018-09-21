@@ -61,9 +61,19 @@ function getBookSearch(req, res) {
 function getGoogleBooks (req, res) {
   superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.query.searchType}:${req.query.search}&fields=items(volumeInfo/authors, volumeInfo/title, volumeInfo/industryIdentifiers/identifier, volumeInfo/description, volumeInfo/imageLinks/thumbnail)`)
     .end( (err, apiResponse) => {
-      res.send(apiResponse.body);
       // let tasks = apiResponse.body.todos.map(todo => ({title: todo.body, done: todo.completed}));
-      // res.render('searchresults', {tasks: tasks});
+      let resultArr = [];
+      apiResponse.body.items.forEach( book => {
+        let bookObj = {
+          title: book.volumeInfo.title,
+          author: book.volumeInfo.authors[0],
+          description: book.volumeInfo.description,
+          isbn: parseInt(book.volumeInfo.industryIdentifiers[0].identifier),
+          image_url: book.volumeInfo.imageLinks.thumbnail
+        };
+        resultArr.push(bookObj);
+      });
+      res.render('pages/search-results', {data: resultArr});
     });
 }
 
