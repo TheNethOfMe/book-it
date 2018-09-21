@@ -18,6 +18,7 @@ This is an application made with nodejs, Expressjs, the EJS templating engine, w
 09-19-2018 10am = individual book details can be viewed
 09-19-2018 11am = styled home and book pages, added nav
 09-20-2018 12pm = added form for adding new books and hamburger menu
+09-21-2018 12pm = the app can search Google's Books API and new books can be added to the collection from there. The app can also update and delete entries in the collection.
 
 ## Credits
 We would like to thank the good folks at Heroku who let people like us run apps for free.
