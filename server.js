@@ -13,17 +13,12 @@ app.use(express.static('./public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/hello', (req, res) => {
-  res.render('index', { data: [] });
-});
-
+app.get('/', (req, res) => res.redirect('/books'));
 app.get('/books', ctrl.booksGetAll);
 app.get('/books/search', ctrl.getGoogleBooks);
 app.get('/books/:id', ctrl.booksGetOne);
 app.get('/addbook', ctrl.getBookForm);
 app.post('/books', ctrl.addOneBook);
-app.get('/search', ctrl.getBookSearch);
-
 
 app.get('/error', (req, res) => {
   res.render('pages/error');

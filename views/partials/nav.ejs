@@ -15,3 +15,13 @@
     <%- include('./links') %>
   </div>
 </div>
+<form action="/books/search" method="GET" class="search-form">
+  <div class="radio-buttons">
+    <label for="titleSearch">Title Search <input type="radio" name="searchType" value="intitle" id="titleSearch" checked /></label>
+    <label for="authorSearch">Author Search <input type="radio" name="searchType" value="inauthor" id="authorSearch" /></label>
+  </div>
+  <%- include('../partials/form-group', { label: 'search', type: 'text' }); %>
+  <div class="form-group">
+    <button>Search</button>
+  </div>
+</form>

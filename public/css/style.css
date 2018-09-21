@@ -176,7 +176,7 @@ input:focus, textarea:focus {
 }
 
 /* SEARCH FORM */
-.searchForm {
+.search-form {
   max-width: 650px;
 }
 
@@ -185,10 +185,21 @@ input:focus, textarea:focus {
   flex-direction: row;
   justify-content: center;
 }
+
 .radio-buttons label {
   background-color: #333;
   color: #eee;
   margin: 5px;
   padding: 5px;
   width: 25%;
+}
+
+/* RESULTS FORM */
+.hidden-form {
+  background-color: rgba(0, 0, 0, 0);
+  width: 80%;
+}
+
+.hidden-form button {
+  background-color: #e67429;
 }
