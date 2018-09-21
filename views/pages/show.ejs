@@ -10,6 +10,13 @@
     <%- include('../partials/book-header', { book: book }); %>
     <p class="book-description"><%= book.description %></p>
     <h6><%= book.isbn %></h6>
+    <div>
+      <a href="/addbook/<%= book.id %>">Edit Book Details</a>
+      <form action="/books/<%= book.id %>" method="POST" class="hidden-form">
+        <input type="hidden" name="_method" value="DELETE" />
+        <button>Delete From Collection</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>

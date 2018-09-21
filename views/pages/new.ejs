@@ -3,11 +3,12 @@
 <%- include('../partials/head'); %>
 <body>
   <%- include('../partials/nav'); %>
+  <h1>Add New Book Manually</h1>
   <form method="POST" action="/books">
-    <%- include('../partials/form-group', { label: 'title'}) %>
-    <%- include('../partials/form-group', { label: 'author'}) %>
-    <%- include('../partials/form-group', { label: 'isbn'}) %>
-    <%- include('../partials/form-group', { label: 'image_url'}) %>
+    <%- include('../partials/form-group', { label: 'title', type: 'text', value: '' }) %>
+    <%- include('../partials/form-group', { label: 'author', type: 'text', value: '' }) %>
+    <%- include('../partials/form-group', { label: 'isbn', type: 'number', value: '' }) %>
+    <%- include('../partials/form-group', { label: 'image_url', type: 'text', value: '' }) %>
     <div class="form-group">
       <label for="description">description:</label>
       <textarea type="text" id="description" name="description"></textarea>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<%- include('../partials/head'); %>
+<body>
+  <%- include('../partials/nav'); %>
+  <h1>Search Results</h1>
+  <h2>Search resulted in <%= data.length %> books.</h2>
+  <% if (!data.length) { %>
+    <%- '<p>There are no books to display</p>' %>
+  <% } %>
+  <% data.forEach( book => { %> 
+    <div class="book-header">
+    <%- include('../partials/book-header', { book: book }); %>
+    <form class="hidden-form" action="/books" method="POST">
+      <input type="hidden" name="title" value="<%= book.title %>" />
+      <input type="hidden" name="author" value="<%= book.author %>" />
+      <input type="hidden" name="isbn" value="<%= book.isbn %>" />
+      <input type="hidden" name="image_url" value="<%= book.image_url %>" />
+      <input type="hidden" name="description" value="<%= book.description %>" />
+      <button>Add To Collection</button>
+    </form>
+    </div>
+  <% }); %>
+</body>
+</html>
