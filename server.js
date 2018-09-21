@@ -21,6 +21,7 @@ app.get('/books', ctrl.booksGetAll);
 app.get('/books/:id', ctrl.booksGetOne);
 app.get('/addbook', ctrl.getBookForm);
 app.post('/books', ctrl.addOneBook);
+app.get('/search', ctrl.getBookSearch);
 
 
 app.get('/error', (req, res) => {

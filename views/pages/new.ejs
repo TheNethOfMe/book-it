@@ -4,10 +4,10 @@
 <body>
   <%- include('../partials/nav'); %>
   <form method="POST" action="/books">
-    <%- include('../partials/form-group', { label: 'title'}) %>
-    <%- include('../partials/form-group', { label: 'author'}) %>
-    <%- include('../partials/form-group', { label: 'isbn'}) %>
-    <%- include('../partials/form-group', { label: 'image_url'}) %>
+    <%- include('../partials/form-group', { label: 'title', type: 'text' }) %>
+    <%- include('../partials/form-group', { label: 'author', type: 'text' }) %>
+    <%- include('../partials/form-group', { label: 'isbn', type: 'number' }) %>
+    <%- include('../partials/form-group', { label: 'image_url', type: 'text' }) %>
     <div class="form-group">
       <label for="description">description:</label>
       <textarea type="text" id="description" name="description"></textarea>

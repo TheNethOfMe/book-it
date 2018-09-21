@@ -51,9 +51,14 @@ function addOneBook(req, res) {
   });
 }
 
+function getBookSearch(req, res) {
+  res.render('pages/search');
+}
+
 module.exports = {
   booksGetAll,
   booksGetOne,
   addOneBook,
-  getBookForm
+  getBookForm,
+  getBookSearch
 };
