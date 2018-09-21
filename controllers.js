@@ -3,6 +3,9 @@
 const pg = require('pg');
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
+const superagent = require('superagent');
+const methodOverride = require('method-override');
+
 client.connect();
 client.on('error', err => console.log(err));
 
@@ -55,10 +58,20 @@ function getBookSearch(req, res) {
   res.render('pages/search');
 }
 
+function getGoogleBooks (req, res) {
+  superagent.get(`https://www.googleapis.com/books/v1/volumes?q=${req.query.searchType}:${req.query.search}&fields=items(volumeInfo/authors, volumeInfo/title, volumeInfo/industryIdentifiers/identifier, volumeInfo/description, volumeInfo/imageLinks/thumbnail)`)
+    .end( (err, apiResponse) => {
+      res.send(apiResponse.body);
+      // let tasks = apiResponse.body.todos.map(todo => ({title: todo.body, done: todo.completed}));
+      // res.render('searchresults', {tasks: tasks});
+    });
+}
+
 module.exports = {
   booksGetAll,
   booksGetOne,
   addOneBook,
   getBookForm,
-  getBookSearch
+  getBookSearch,
+  getGoogleBooks
 };

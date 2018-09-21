@@ -18,6 +18,7 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/books', ctrl.booksGetAll);
+app.get('/books/search', ctrl.getGoogleBooks);
 app.get('/books/:id', ctrl.booksGetOne);
 app.get('/addbook', ctrl.getBookForm);
 app.post('/books', ctrl.addOneBook);
