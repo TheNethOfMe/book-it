@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head'); %>
+<body>
+  <%- include('../partials/nav'); %>
+  <h1>Add New Book Manually</h1>
+  <form method="POST" action="/books/<%= data.id %>">
+    <input type="hidden" name="_method" value="PUT" />
+    <%- include('../partials/form-group', { label: 'title', type: 'text', value: data.title }) %>
+    <%- include('../partials/form-group', { label: 'author', type: 'text', value: data.author }) %>
+    <%- include('../partials/form-group', { label: 'isbn', type: 'number', value: data.isbn }) %>
+    <%- include('../partials/form-group', { label: 'image_url', type: 'text', value: data.image_url }) %>
+    <div class="form-group">
+      <label for="description">description:</label>
+      <textarea type="text" id="description" name="description"><%= data.description %></textarea>
+    </div>
+    <div class="form-group">
+      <input type="submit" value="Update Book" />
+    </div>
+  </form>
+</body>
+</html>

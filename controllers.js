@@ -4,7 +4,6 @@ const pg = require('pg');
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 const superagent = require('superagent');
-const methodOverride = require('method-override');
 
 client.connect();
 client.on('error', err => console.log(err));
@@ -74,10 +73,33 @@ function getGoogleBooks (req, res) {
     });
 }
 
+function deleteOneBook(req, res) {
+  client.query('DELETE FROM books WHERE id = $1', [req.params.id], (err, result) => {
+    res.redirect('/books');
+  });
+}
+
+function getEditForm(req, res) {
+  client.query('SELECT * FROM books WHERE id = $1', [req.params.id], (err, result) => {
+    res.render('pages/edit', { data: result.rows[0] });
+  });
+}
+
+function editOneBook(req, res) {
+  let SQL = 'UPDATE books SET title=$1, author=$2, isbn=$3, image_url=$4, description=$5 WHERE id=$6';
+  let values = [req.body.title, req.body.author, req.body.isbn, req.body.image_url, req.body.description, req.params.id];
+  client.query(SQL, values, (err, data) => {
+    res.redirect(`/books/${req.params.id}`);
+  });
+}
+
 module.exports = {
   booksGetAll,
   booksGetOne,
   addOneBook,
   getBookForm,
-  getGoogleBooks
+  getGoogleBooks,
+  deleteOneBook,
+  getEditForm,
+  editOneBook
 };

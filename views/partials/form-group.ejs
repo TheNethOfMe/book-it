@@ -1,5 +1,12 @@
 <div class="form-group">
   <label for="<%= label %>"><%= label %>:</label>
   <input 
-    type="<%= type %>" id="<%= label %>" name="<%= label %>" required />
+    type="<%= type %>" 
+    id="<%= label %>" 
+    name="<%= label %>" 
+    required 
+    <% if (value) { %>
+      value="<%= value %>"
+    <% } %>
+  />
 </div>
